@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_03_101400) do
+ActiveRecord::Schema.define(version: 2020_08_04_084652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bids", force: :cascade do |t|
-    t.boolean "selected"
+    t.boolean "selected", default: false
     t.bigint "user_id", null: false
     t.bigint "gig_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -30,11 +30,11 @@ ActiveRecord::Schema.define(version: 2020_08_03_101400) do
     t.string "city"
     t.string "address"
     t.string "description"
-    t.string "price"
     t.string "phone_number"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "price"
     t.index ["user_id"], name: "index_gigs_on_user_id"
   end
 

@@ -1,3 +1,5 @@
 class User < ApplicationRecord
-  validates :name, presence :true
+  has_many :gigs
+  has_many :bids
+  validates :name, presence: true
 end
