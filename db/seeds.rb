@@ -28,14 +28,6 @@ gigs = [
 
 Gig.create(gigs)
 
-# 5.times do
-#   Gig.create!(name: Faker::Job.title, 
-#               address: Faker::Address.full_address,
-#               description: Faker::Job.field,
-#               price: 49,
-#               user: User.all.sample)
-# end
-
 # 3.times do
 #   Bid.create!(selected: false,
 #               user: User.all.sample,
