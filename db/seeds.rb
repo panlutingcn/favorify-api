@@ -11,16 +11,33 @@ require 'faker'
   User.create!(name: Faker::Name.name)
 end
 
-5.times do
-  Gig.create!(name: Faker::Job.title, 
-              address: Faker::Address.full_address,
-              description: Faker::Job.field,
-              price: 49,
-              user: User.all.sample)
-end
+Bid.destroy_all
+Gig.destroy_all
 
-3.times do
-  Bid.create!(selected: false,
-              user: User.all.sample,
-              gig: Gig.all.sample)
-end
+gigs = [
+
+  {name: "Buy a birthday cake", address: "延安西路129号华侨大厦5楼XNode", description: "Help me buy a chocolate birthday cake with budget 200RMB and deliver it by 5pm, thanks!", price: 49, user: User.all.sample},
+
+  {name: "Walk my dog on the weekend", address: "Taian Road 125", description: "I'm going on a business trip on the weeekend and need someone to walk my dog around 8pm both on Saturday AND Sunday.", price: 60, user: User.all.sample},
+
+  {name: "Show me around Shanghai", address: "Weflow Hostel, Xintiandi", description: "Looking for a local who can show me around Shanghai for a half day. I'm interested in history and arts.", price: 120, user: User.all.sample},
+
+  {name: "Help me move", address: "Jingan Temple", description: "Help me move on Saturday afternoon", price: 180, user: User.all.sample}
+
+]
+
+Gig.create(gigs)
+
+# 5.times do
+#   Gig.create!(name: Faker::Job.title, 
+#               address: Faker::Address.full_address,
+#               description: Faker::Job.field,
+#               price: 49,
+#               user: User.all.sample)
+# end
+
+# 3.times do
+#   Bid.create!(selected: false,
+#               user: User.all.sample,
+#               gig: Gig.all.sample)
+# end
