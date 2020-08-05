@@ -22,7 +22,9 @@ gigs = [
 
   {name: "Show me around Shanghai", address: "Weflow Hostel, Xintiandi", description: "Looking for a local who can show me around Shanghai for a half day. I'm interested in history and arts.", price: 120, user: User.all.sample},
 
-  {name: "Help me move", address: "Jingan Temple", description: "Help me move on Saturday afternoon", price: 180, user: User.all.sample}
+  {name: "Help me move", address: "Jingan Temple", description: "Help me move on Saturday afternoon", price: 180, user: User.all.sample},
+
+  {name: "Help me with ICP Beian process", address: "Huaqiao Dasha 5th floor", description: "Looking for someone with experiences to walk me through the ICP Beian process for my website.", price: 500, user: User.all.sample}
 
 ]
 
