@@ -25,7 +25,7 @@ class Api::V1::GigsController < Api::V1::BaseController
   end
 
   def gig_params
-    params.require(:gig).permit(:name, :address, :description, :price)
+    params.require(:gig).permit(:user_id, :name, :address, :description, :price)
   end
 
   def render_error
