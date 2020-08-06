@@ -3,7 +3,11 @@ class Api::V1::GigsController < Api::V1::BaseController
   skip_before_action :verify_authenticity_token
 
   def index
-    @gigs = Gig.all
+    if params[:query].present?
+      @gigs = Gig.global_search(params[:query])
+    else
+      @gigs = Gig.all
+    end
   end
 
   def show
@@ -46,5 +50,5 @@ class Api::V1::GigsController < Api::V1::BaseController
     render json: { errors: @gig.errors.full_messages },
       status: :unprocessable_entity
   end
-  
+
 end
