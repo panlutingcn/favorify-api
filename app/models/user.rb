@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :gigs
-  has_many :bids
+  has_many :gigs, dependent: :destroy
+  has_many :bids, dependent: :destroy
   validates :name, presence: true
 end

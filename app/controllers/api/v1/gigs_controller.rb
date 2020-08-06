@@ -1,5 +1,5 @@
 class Api::V1::GigsController < Api::V1::BaseController
-  before_action :set_gig, only: [ :show ]
+  before_action :set_gig, only: [ :show, :update, :destroy ]
   skip_before_action :verify_authenticity_token
 
   def index
@@ -7,6 +7,7 @@ class Api::V1::GigsController < Api::V1::BaseController
   end
 
   def show
+
   end
 
   def create
@@ -18,14 +19,27 @@ class Api::V1::GigsController < Api::V1::BaseController
     end
   end
 
+  def update
+    if @gig.update(gig_params)
+      render :show
+    else
+      render_error
+    end
+  end
+
+  def destroy
+    @gig.destroy
+    head :no_content
+  end
+
   private
 
   def set_gig
-    @gig = gig.find(params[:id])
+    @gig = Gig.find(params[:id])
   end
 
   def gig_params
-    params.require(:gig).permit(:user_id, :name, :address, :description, :price)
+    params.require(:gig).permit(:user_id, :id, :name, :address, :description, :price)
   end
 
   def render_error
