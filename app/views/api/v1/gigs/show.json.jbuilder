@@ -1,4 +1,4 @@
-json.extract! @gig, :name, :address, :description, :price
+json.extract! @gig, :name, :address, :description, :price, :photo_url
 # TODO: pass the created time to database
 json.created_at @gig.created_at.strftime("%b%e, %l:%M %p")
 

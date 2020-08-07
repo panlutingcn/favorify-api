@@ -15,15 +15,15 @@ Bid.destroy_all
 Gig.destroy_all
 
 gigs = [
-  {name: "Buy a birthday cake", address: "延安西路129号华侨大厦5楼XNode", description: "Help me buy a chocolate birthday cake with budget 200RMB and deliver it by 5pm, thanks!", price: 49.9, user: User.all.sample},
+  {name: "Buy a birthday cake", address: "延安西路129号华侨大厦5楼XNode", description: "Help me buy a chocolate birthday cake with budget 200RMB and deliver it by 5pm, thanks!", price: 49.9, user: User.all.sample,photo_url: "http://lc-eia2S6Bs.cn-n1.lcfile.com/4e7e5d7819f3ae618d5a/cake.jpg"},
 
-  {name: "Walk my dog on the weekend", address: "Taian Road 125", description: "I'm going on a business trip on the weeekend and need someone to walk my dog around 8pm both on Saturday AND Sunday.", price: 60, user: User.all.sample},
+  {name: "Walk my dog on the weekend", address: "Taian Road 125", description: "I'm going on a business trip on the weeekend and need someone to walk my dog around 8pm both on Saturday AND Sunday.", price: 60, user: User.all.sample, photo_url: "http://lc-eia2S6Bs.cn-n1.lcfile.com/93bacb3332574e00792d/walkdog.png"},
 
-  {name: "Show me around Shanghai", address: "Weflow Hostel, Xintiandi", description: "Looking for a local who can show me around Shanghai for a half day. I'm interested in history and arts.", price: 120, user: User.all.sample},
+  {name: "Show me around Shanghai", address: "Weflow Hostel, Xintiandi", description: "Looking for a local who can show me around Shanghai for a half day. I'm interested in history and arts.", price: 120, user: User.all.sample, photo_url: "http://lc-eia2S6Bs.cn-n1.lcfile.com/68645556209f18c88142/tour.jpg"},
 
-  {name: "Help me move", address: "Jingan Temple", description: "Help me move on Saturday afternoon", price: 180, user: User.all.sample},
+  {name: "Help me move", address: "Jingan Temple", description: "Help me move on Saturday afternoon", price: 180, user: User.all.sample, photo_url: "http://lc-eia2S6Bs.cn-n1.lcfile.com/ab2bd6aee31e0c25fde6/moving.jpg"},
 
-  {name: "Help me with ICP Beian process", address: "Huaqiao Dasha 5th floor", description: "Looking for someone with experiences to walk me through the ICP Beian process for my website.", price: 500, user: User.all.sample}
+  {name: "Help me with ICP Beian process", address: "Huaqiao Dasha 5th floor", description: "Looking for someone with experiences to walk me through the ICP Beian process for my website.", price: 500, user: User.all.sample, photo_url: "http://lc-eia2S6Bs.cn-n1.lcfile.com/ea08091131cace92e6d0/icp.jpg"}
 ]
 Gig.create(gigs)
 
