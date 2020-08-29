@@ -15,7 +15,9 @@ class Api::V1::GigsController < Api::V1::BaseController
   end
 
   def create
+    p "I'm here"
     @gig = Gig.new(gig_params)
+    # debugger
     if @gig.save
       render :show, status: :created
     else
